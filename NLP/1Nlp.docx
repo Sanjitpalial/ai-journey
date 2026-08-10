@@ -1,0 +1,55 @@
+NPL-it is a field of artificial intelligence and computer science that focuses on enabling computers to understand, interpret ,\
+generate and interact with human language
+
+How NPL works
+1. Text preprocessing- It includes cleaning a preparing text by removing punctuations and tokenizing it 
+2. Language understanding- Analyzing grammer and understand the meaning and context
+3. ML or DL ( Model training)- Training models on large amount of text to recognize patterns
+4. Generating text- Producing reports and predictions 
+
+some common NLP applications include
+1. Machine translation- Translating English to japanese
+2. chatbots and virtual assistants- eg. chatgpt , siri etc
+3. Sentiment analysis - determining whether the review is positive or not
+4. Text summarization- generate a summary from a text document
+5. spam detection- filtering unwanted emails
+6. speech recognition- converting spoken words into text
+7. Information retrievel- search engines
+8. Conversational agents- eg swiggy's helpline and query agents
+9. Knowledge graphs and QA systems- big database- connect entities to make a large knowledge graph- transtale into questions and answers
+10. Topic Modelling- automatically finding hidden topics in a collection of text documents
+11. Text Generation- finding the next word based on your previous typing behaviour
+12. Text Parsing- gramatically brekdown the sentence to understand the meaning
+
+Approaches to NLP
+1. Heuristic approach- It is a mental shortcut that people sue to solve problems and make judgements quickly and efficiently but 
+that is not always optimal and perfect. Instead of learning from data like machine learning technique , heuristic approaches rely 
+on human defined rules
+
+Common heuristic techniques
+1. spell checking
+2. keyword checking
+3. pattern checking
+4. chatbots
+5. grammer checking
+6. Dictionary lookup
+
+Advantage-
+1. Easy to understand and implement
+2. Fast execution
+3. No training data required
+
+Disadvantage-
+1. Rules are written manually
+2. difficult to maintain as the numbe of rules grow
+3. doesn't adapt to new data
+4. poor at handling context
+
+Three important NLP concets that heuristic technique uses
+1. Regular expresions- It is a pattern used to match, search,extract, replace the text, and often used for text preprocessing and
+Information extraction.
+2. WordNet- it is a laxcal database of english developed at princeton university that represent the relationship between words such 
+as synonyms, antonyms, hypernyms, hyponyms
+2 Open minded commen sense- It is a project that collected everyday commen sense knowledge from humans and make it available for 
+computers
+
