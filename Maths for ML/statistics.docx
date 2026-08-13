@@ -1,0 +1,33 @@
+Descriptive Statistics------
+
+1. What is Stats/Types of Stats	
+2. Population Vs Sample->In machine learning, a population might refer to the entire set of data relevant to a problem, while a 
+                       sample would be a subset of that data. Training a model typically happens on a sample of the total data
+                       (the training set), which is assumed to be representative of the population. This concept is used to 
+                       perform inferential statistics and to estimate the model's performance on unseen data.
+3. Types of Data	Understanding the type of data you're working with helps in selecting the appropriate preprocessing techniques, feature engineering methods, and machine learning models.
+Measures of Central Tendency-> These measures provide the central value of a data distribution. They are used to understand the 'typical' value in a dataset and are used in various areas of machine learning including exploratory data analysis, outlier detection, and data imputation.		
+- Mean		                                                                                    
+- Median		                                                                            
+- Mode		[L]	Later
+- Weighted Mean [L]			
+- Trimmed Mean [L]			
+
+4. Measure of Dispersion-> These measures provide insights into the spread or variability of the data distribution. They help in understanding the consistency in the data and are also used in exploratory data analysis, outlier detection, feature normalization, etc.
+- Range	
+- Variance	
+- Standard Deviation	
+- Coefficient of Variation	
+
+5. Quantiles and Percentiles-> These help in understanding the distribution of data and are used in descriptive statistics, outlier detection, and setting up thresholds for decision-making.
+6. 5 number summary and BoxPlot-> These are used in the exploratory data analysis phase to understand the data distribution and identify outliers. Boxplots graphically depict the minimum, first quartile, median, third quartile, and maximum of a dataset.
+
+7. Skewness-> These are used to understand the asymmetry and tailedness of the data distribution, respectively. They're particularly useful in exploratory data analysis, informing data transformations needed to meet the assumptions of some machine learning algorithms.
+8. Kurtosis [L]	
+	
+9. Plotting Graphs-> Graphical analysis is crucial in the exploratory phase of machine learning. It helps in understanding the distributions of individual variables (univariate), relationships between two variables (bivariate), or complex interactions among multiple variables (multivariate).
+- Univariate Analysis	
+- Bivariate Analysis	
+- Multivariate Analysis	
+	
+	
