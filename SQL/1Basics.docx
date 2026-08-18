@@ -84,3 +84,50 @@ UPDATE students SET age=23 WHERE name='Akash';
 
 
 Phase 3-----------------------------------------------------------------------
+Appropriate Data Type-
+constraints-
+
+If we talk about SQL we have multiple datatypes these
+include.
+1) Numeric Data Types
+. INT
+. NUMERIC(p,s)- exact precision
+. REAL - 4 byte floating point
+. SERIAL- auto increment
+
+2) Character/String Data Types
+. VARCHAR- variable length
+. TEXT- unlimited length
+
+3) Boolean Type
+. boolean- TRUE< FALSE< NULL
+
+4) Date and Time Types
+. DATE- only Date
+. TIME- only Time
+. TIMESTAMP - date+Time
+. TIMESTAMPTZ- date+time+zone
+
+5) constraints
+. PRIMARY KEY- uniquely identifies every row
+. NOT NULL - column must have a VALUES
+. UNIQUE- not duplicate VALUES
+. DEFAULT - provide a default values if none
+. CHECk- validates values
+. FOREIGN KEY- links one table to another
+
+practice--
+
+CREATE DATABASE Flipkart_db;
+
+CREATE TABLE products(
+    Product_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    sku_code char(8) UNIQUE NOT NULL,
+    PRICE NUMERIC(10,2) NOT NULL,
+    Stock_quantity INT CHECK(Stock_quantity>0),
+    is_available Boolean DEFAULT TRUE,
+    Category VARCHAR(50) NOT NULL,
+    Added_on DATETIME DEFAULT current_date,
+    Last_updated TIMEZONE DEFAULT now()
+);
