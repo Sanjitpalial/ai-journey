@@ -1,0 +1,45 @@
+-> Difference between MySQL and PostgresSQL?
+
+My SQL- it is good for storing normal data types. it does not know about new datatype structures like JSON DB which prvoides a more powerful
+way to work with JSON
+-It does not Know anything about indexing and can lead to poor performance
+- It is known for its performance with a good hardware and great configuration but can be affected by a poor database design
+
+PostgredSQL- it supports new datatyes like JSON DB and enum
+- It is useful in web application that handles large databases
+- It is the best and efficient at indexing databases if use efficiently to create indexes
+
+
+->What is a Database?
+
+- A database is a collection of organized data that can be easily accessed, managaged and updated( it is like an organized notebook 
+where every page has information written in a very structured way so that you can search, update and retrieve it easily)
+
+- In more technical terms
+. It stores data electronically
+. The data is stored in terms of tables
+. You can query the data using language to read, write, update and delete the data
+
+
+-> What is RDBMS?
+
+-RDBMS stands for Relational Database management system.
+Relational- Databse is organized in tables
+Database- collection of organized data
+Management system- software that allows you to read, create, update and delete the data
+
+So RDBMS is a software that allows you to store data in tables , relate them to each other and perform operation on them using SQL
+
+
+-> so why PostgredSQL
+. Open source
+. Most feature rich and powerful
+. Support complex queries like Join and window function
+. you can make your own data types etc 
+. support for NoSQl features
+
+
+Schema- it is like a folder that helps organize you tables, views and functions etc , we can organize objects using schemas
+Table- it is the main place where data is stored 
+        . columns- defines the type of data(name, age, salary)
+        . rows- each record
