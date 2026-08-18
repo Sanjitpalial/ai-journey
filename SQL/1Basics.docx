@@ -1,3 +1,4 @@
+Phase 1--------------------------------------------------------
 -> Difference between MySQL and PostgresSQL?
 
 My SQL- it is good for storing normal data types. it does not know about new datatype structures like JSON DB which prvoides a more powerful
@@ -43,3 +44,43 @@ Schema- it is like a folder that helps organize you tables, views and functions 
 Table- it is the main place where data is stored 
         . columns- defines the type of data(name, age, salary)
         . rows- each record
+
+
+Phase 2------------------------------------------------------
+Basic commanda-
+CRUD operations-
+
+> You can also create a new database using command line-
+-> CREATE DATABASE new_db;
+
+> To create the table you need to write a simple query like this.-
+-> CREATE TABLE students(
+    student_id INT,
+    roll no. INT
+    age INT,
+    name VARCHAR(50)
+);
+
+
+> now we also have to fill the table cause there are only columns so for that a very simple insert query will do.
+-> INSERT INTO students(roll no., age, name)
+   VALUES(23,13,'Ankit'),
+         (33,12,'Rahul');
+
+
+> BASIC USE OF CRUD
+-> SELECT * FROM students;  read the table.
+-> SELECT name FROM students;  This will display all the columns of your data, and for specific column you can provide the name of that column.
+
+
+> you can also do the conditional selection using the WHERE keyword in query.
+->SELECT name from students WHERE grade='A';
+
+> update the data in table
+UPDATE students SET age=23 WHERE name='Akash';
+
+> delete aswell using any column and the row will be removed.
+-> DELETE FROM students WHERE name='Akash';
+
+
+Phase 3-----------------------------------------------------------------------
