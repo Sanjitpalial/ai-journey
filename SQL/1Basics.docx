@@ -171,4 +171,22 @@ Q7. Show product name as "Item_Name" and price as "Item_Price".
 Q8. Show all the unique categories from the products table.
 -> SELECT DISTINCT category from products;
 
-hello
+
+Clauses with Operrators & Aggregation functions------------
+
+
+select * from products;
+
+Select * from products where category != 'Electronics';
+
+Select * from products where price < 1000 and category='Electronics';
+
+select * from products where price BETWEEN 400 and 1000;
+
+select * from products where category IN ('Electronics', 'Home & Kitchen', 'Fitness');  -- IN for multiple conditions
+
+select * from products where sku_code LIKE 'W%'; -- % for multiple words
+
+select * from products where sku_code LIKE '%123%';
+
+select * from products where sku_code LIKE '_B%';  -- _ means one space of 
