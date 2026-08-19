@@ -170,3 +170,5 @@ Q7. Show product name as "Item_Name" and price as "Item_Price".
 
 Q8. Show all the unique categories from the products table.
 -> SELECT DISTINCT category from products;
+
+hello
