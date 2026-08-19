@@ -172,8 +172,7 @@ Q8. Show all the unique categories from the products table.
 -> SELECT DISTINCT category from products;
 
 
-Clauses with Operrators & Aggregation functions------------
-
+Clauses with Operrators ------------
 
 select * from products;
 
@@ -189,4 +188,33 @@ select * from products where sku_code LIKE 'W%'; -- % for multiple words
 
 select * from products where sku_code LIKE '%123%';
 
-select * from products where sku_code LIKE '_B%';  -- _ means one space of 
+select * from products where sku_code LIKE '_B%';  -- _ means one space of words
+
+
+Aggregation Functions-------------
+
+1. count() - count no. of rows
+2. sum() - add numeric values
+3. avg() - calculate the average
+4. min() - find smallest value
+5. max() - find highest value
+
+select count(product_id) from products;
+
+select sum(price) from products where category = 'Electronics';
+
+select avg(price) from products;
+
+select round(avg(price),2) from products;  -- round can handle the number of values after the decimal 
+
+-- Exercise of clauses with operators & aggregation functions
+
+select name, price from products where price=(select min(price) from products);
+
+select avg(price) as avg_price from products where category IN ('Home & Kitchen', 'Fitness') Group BY category; 
+
+select name , stock_quantity from products where is_available=True AND stock_quantity>50 AND price!=299;
+
+select max(price), category from products GROUP BY category;
+
+select distinct upper(category) as category_upper from products ORDER BY category_upper DESC;
