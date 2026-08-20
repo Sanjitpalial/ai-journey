@@ -133,8 +133,8 @@ CREATE TABLE products(
 
 
 Phase 3-------------------------------------------------------------------------
-Clauses
-Operators and Aggregation functions
+-> Clauses
+-> Operators and Aggregation functions
 
 clauses- clause are mainly used for querying the data and are find of building blocks
 
@@ -172,7 +172,7 @@ Q8. Show all the unique categories from the products table.
 -> SELECT DISTINCT category from products;
 
 
-Clauses with Operrators ------------
+-> Clauses with Operrators ------------
 
 select * from products;
 
@@ -191,7 +191,7 @@ select * from products where sku_code LIKE '%123%';
 select * from products where sku_code LIKE '_B%';  -- _ means one space of words
 
 
-Aggregation Functions-------------
+-> Aggregation Functions-------------
 
 1. count() - count no. of rows
 2. sum() - add numeric values
@@ -207,6 +207,7 @@ select avg(price) from products;
 
 select round(avg(price),2) from products;  -- round can handle the number of values after the decimal 
 
+
 -- Exercise of clauses with operators & aggregation functions
 
 select name, price from products where price=(select min(price) from products);
@@ -218,3 +219,48 @@ select name , stock_quantity from products where is_available=True AND stock_qua
 select max(price), category from products GROUP BY category;
 
 select distinct upper(category) as category_upper from products ORDER BY category_upper DESC;
+
+
+-> String Functions : It is used to manipulate text data - like names, categories etc;
+-They help you
+. Clean Text
+. Extract parts of a String
+. Convert clauses
+. Replace or remove characters
+
+i. First set of functions are Upper Lower and length function.
+
+-> SELECT UPPER(name) FROM products;
+-> SELECT LOWER(sku_code) FROM products;
+-> SELECT LENGTH(name) FROM products;
+
+
+ii. lets see substring - it is used to extract some portion from your string .
+substring( text , location , length)
+
+-> SELECT name, SUBSTRING(sku_code,1,2) FROM products;
+
+
+iii. LEFT() and RIGHT() both have the use case similar to substring Get n leftmost and rightmost elements
+
+-> SELECT LEFT(name,2) FROM products;
+
+-> SELECT RIGHT(name,3) FROM products;
+
+
+iv. Some other functions are Concat() - Concat joins 2 strings together.
+
+-> SELECT CONCAT(name,' ',category) FROM products; --1st method
+
+-> SELECT CONCAT_WS(' : ',name, category, price, is_available) FROM products; -- 2nd method for ease
+
+
+v. now lets see trim() and replace()
+trim() - This function will remove all the spaces from the string.
+replace() - This function will replace any thing you want
+
+-> SELECT TRIM('   Brothe   ') ;
+
+-> SELECT name, replace(sku_code, left(sku_code,2),'GG') FROM products;
+
+-> SELECT name ,replace(category, left(category,4),'LIT') FROM products;
