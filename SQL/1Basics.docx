@@ -1,3 +1,4 @@
+Phase 1----------------------------------------------------------------------
 -> Difference between MySQL and PostgresSQL?
 
 My SQL- it is good for storing normal data types. it does not know about new datatype structures like JSON DB which prvoides a more powerful
@@ -45,7 +46,7 @@ Table- it is the main place where data is stored
         . rows- each record
 
 
-Phase 1------------------------------------------------------
+Phase 2------------------------------------------------------
 Basic commanda-
 CRUD operations-
 
@@ -82,7 +83,7 @@ UPDATE students SET age=23 WHERE name='Akash';
 -> DELETE FROM students WHERE name='Akash';
 
 
-Phase 2-----------------------------------------------------------------------
+Phase 3-----------------------------------------------------------------------
 Appropriate Data Type-
 constraints-
 
@@ -132,7 +133,7 @@ CREATE TABLE products(
 );
 
 
-Phase 3-------------------------------------------------------------------------
+Phase 4-------------------------------------------------------------------------
 -> Clauses
 -> Operators and Aggregation functions
 
@@ -264,3 +265,52 @@ replace() - This function will replace any thing you want
 -> SELECT name, replace(sku_code, left(sku_code,2),'GG') FROM products;
 
 -> SELECT name ,replace(category, left(category,4),'LIT') FROM products;
+
+
+
+Phase 5-----------------------------------------------------------
+
+1. ALTER -----------------
+
+CREATE TABLE student(
+student_id SERIAL PRIMARY KEY,
+name VARCHAR(100),
+age INT
+);
+
+INSERT INTO student(name, age)
+VALUES('Akarsh',24),
+	  ('Anjali',23);
+
+SELECT * FROM student;
+
+i. Add a New Column
+-> ALTER TABLE student ADD column email VARCHAR(100);
+
+ii. Remove a Column
+-> ALTER TABLE student DROP COLUMN email;
+
+iii. Rename a Column.
+-> ALTER TABLE student RENAME COLUMN name TO full_name;
+
+iv. Change Data Type of a Column
+-> ALTER TABLE student ALTER COLUMN age TYPE INT;
+
+v. Set a Default Value.
+-> ALTER TABLE student ALTER COLUMN age SET DEFAULT 19;
+
+vi. Remove a Default Value
+-> ALTER TABLE student ALTER COLUMN age DROP DEFAULT;
+
+vii. ADD A CONSTRAINT
+-> ALTER TABLE student ADD CONSTRAINT age_check CHECK(age>=19);
+
+viii. DROP A CONSTRAINT
+-> ALTER TABLE student DROP CONSTRAINT age_check;
+
+ix. RENAME THE TABLE
+ALTER TABLE student RENAME TO school_student;
+
+
+
+
