@@ -30,7 +30,7 @@ print("Hello world");
 
 # Numbers
 # 1. Integer- It is a whole number without a decimal point. Example- 1, 2, 3, -4, 0
-age = 10 
+age = 10
 a1 = -34
 
 # 2. Float- It is a number that has a decimal point. Example- 3.14, -0.5, 0.0
@@ -44,6 +44,7 @@ e1=6j
 # String- It is a sequence of characters. and used to store anything in python, Example- "Hello", 'Python', "123"
 name="Ani"
 print(type(name));
+print(type(d1))
 
 # Boolean- It is a data type that can only have two values: True or False. Example- True, False
 is_student = True

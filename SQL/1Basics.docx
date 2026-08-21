@@ -312,5 +312,67 @@ ix. RENAME THE TABLE
 ALTER TABLE student RENAME TO school_student;
 
 
+2. Cases--------------
+CASE is a conditional expression in SQL that works like an if-else or switch statement. It lets you return different values based on different
+conditions — all within a single query
+
+WHY DO WE USE CASE?
+To create custom columns on-the-fl y
+To categorize data based on certain logic
+To replace values conditionally
+To handle nulls or missing values gracefully
+To simplify complex logic inside SELECT queries
+
+Syntax of CASE in SQL---
+
+SELECT
+column1,
+CASE
+WHEN condition1 THEN result1
+WHEN condition2 THEN result2
+...
+ELSE default_result
+END AS new_column_name
+FROM table_name
+
+
+Step1 - you have to create a new column.
+-> ALTER TABLE products ADD COLUMN price_tag TEXT;
+
+Step 2: Update that column using CASE
+-> UPDATE products
+SET price_tag=
+CASE 
+	WHEN price>1000 THEN 'Expensive'
+	WHEN price>500 AND price<1000 THEN 'Moderate'
+	ELSE 'Cheap'
+END;
+
+Practice on CASE------
+
+1. Ok now lets do one important question inside is available column you have boolean true and false show case a new column to with
+in_stock and out of stock
+
+SELECT 
+name, 
+CASE
+   	WHEN is_available THEN 'True'
+	ELSE 'False'
+END AS availabilitty_status
+FROM products;
+
+2. “ Show product name, stock quantity, and label:
+"High Stock" if quantity > 100
+"Medium Stock" if between 30 and 100
+"Low Stock" otherwise
+
+SELECT
+name, stock_quantity,
+CASE
+	WHEN stock_quantity >100 THEN 'High Score'
+	WHEN stock_quantity BETWEEN 30 AND 100 THEN 'Medium stock'
+	ELSE 'Low Stock'
+END AS stock_level
+FROM products;
 
 
