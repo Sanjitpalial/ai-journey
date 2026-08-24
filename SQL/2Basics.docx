@@ -1,1 +1,12 @@
 Phase 6--------------------------
+relationships
+Joins
+
+1. relationships- “ In a relational database, data is stored across multiple tables, and these tables are connected through relationships.
+Instead of repeating the same data again and again in one huge table, we split it into smaller, meaningful tables and connect them using keys (Primary and
+Foreign Keys).
+
+Types of Relationships.
+1. One-to-One (1:1)
+2. One-to-Many (1:N) 🔥 Most common
+3. Many-to-Many (M:N)
