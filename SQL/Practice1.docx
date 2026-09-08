@@ -1,0 +1,167 @@
+CHATGPT - SQL PRactice questions
+PHASE 1 - Database Basics -> CREATE TABLE -> Data Types -> Constraints ->  INSERT -> UPDATE ->  DELETE -> SELECT
+
+Q1 — Identify the concepts
+
+1. A Table is a place where data is stored in a structured way eg - students
+2. Row is in the table where we store all the records eg - Rahul, 20, CSE
+3. Column is where we specify the which types of data is stored like name, rollno, class eg- name, agee, email
+4. id is the primary key
+5. database is a collections of tables whereas table is a place where all the data is stored
+
+Q2 -Why would id generally be a better primary key than name?
+-because two students can have the same name but not a same id
+
+Q3 id
+
+Q4-
+ CREATE TABLE students(
+    id INT primary key,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) UNIQUE,
+    age INT,
+    course VARCHAR(50)
+);
+
+Q5 CREATE TABLE employees(
+    id INT GENERATED ALWAYS AS IDENTITY primary key,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    salary INT CHECK(salary>0),
+    created_at TIMESTAMPTZ DEFAULT now()
+);
+
+Q6 CREATE TABLE students(
+    id INT GENERATED ALWAYS AS IDENTITY primary key,
+    name VARCHAR(100) NOT NULL,
+    age INT CHECK(age>=18),
+    email VARCHAR(100) NOT NULL
+);
+
+Q7-
+
+Data	Type
+Student age	- INT
+Student name - VARCHAR
+Email	- VARCHAR
+Date of birth	- DATE
+Student's GPA, e.g. 8.75	- DECIMAL
+Whether student is active	- Boolean
+Exact time a student registered - TIMESTAMPTZ
+
+
+Q8- 
+VARCHAR(100)- variale length limit 
+TEXT- unlimited length string
+
+Q9- we use
+DECIMAL(6,2)
+
+Q10- 
+What constraint would you use for each requirement?
+
+Student must provide a name.- NOT NULL
+Every student must have a different email.- UNIQUE
+Student age must be at least 18. - CHECK(age>=18)
+Every student must have a unique ID. - PRIMARY KEY
+A student belongs to an existing department.-
+
+NOT NULL      -> value must exist
+UNIQUE        -> values cannot repeat
+PRIMARY KEY   -> unique row identifier
+CHECK         -> value must satisfy a condition
+FOREIGN KEY   -> must reference another table
+DEFAULT       -> automatic value when none is provided
+
+Q11- 
+     CREATE TABLE users(
+        id INT GENERATED ALWAYS AS IDENTITY primary key,
+        username VARCHAR(100) NOT NULL UNIQUE,
+        email VARCHAR(100) UNIQUE,
+        age INT CHECK(age>=18 AND age<=60)        
+     );
+
+
+Q12- CREATE TABLE orders(
+    id INT primary key,
+    customer_name CHAR(50) NOT NULL,
+    amount INT CHECK(amount>0),
+    status VARCHAR(100) DEFAULT 'pending',
+    created_at TIMESTAMPTZ DEFAULT now()
+);
+
+
+Q13- 
+INSERT INTO student(id,name,age,course,email)
+VALUES(1,'sanjit',age,'Python','email');
+
+Q14-
+insert INTO student(id,name,age,course,email)
+VALUES(2,'Rahul',21,'SQL','rahul@gmail.com'),
+    (3,'Priya',19,'Python','priya@gmail.com'),
+    (4,'Amit',22,'Java','amit@gmail.com);
+
+
+Q15- it will give an error not a null value because every entry has to full fill the whole length
+
+Q16 - it will always show that id 1 already exists and you cannot duplicate a primary key 
+
+Q17 - UPDATE student SET course='Data Science' WHERE name='Sanjit';
+
+Q18 - UPDATE student SET age=age+1 WHERE id=3;
+
+Q19- UPDATE student SET course='PostgredSQL' where course='SQL';
+
+Q20- we did not provide the where statement that actually specifies where to update 
+
+Q21- DELETE FROM student where id=4;
+
+Q22 - DELETE FROM student WHERE age<20;
+
+Q23 - yes it will deletes all the rows but not the schema but frop deletes all the table 
+
+Q24 - SELECT * FROM students;
+
+Q25 - SELECT name email FROM student;
+
+Q26 - SELECT * from student where id=3;
+
+Q27 - SELECT * FROM student where age=20;
+
+Q28 - SELECT * FROM student where age>20;
+
+Q29 - SELECT * FROM student where course='Python';
+
+Q30 - SELECT * FROM student where age>=20 AND age<=22;
+
+Q31 - SELECT * FROM stuent where name ='S%';
+
+Q32 - SELECT * FROM Student where email='sanjit@gmail.com';
+
+Q33 - CREATE TABLE employees(
+    id INT GENERATED ALWAYS AS IDENTITY primary key,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    salary INT CHECK(salary>20,000),
+    hire_date DATE DEFAULT CURRENT_DATE,
+    is_active DEFAULT TRUE
+);
+
+Q34 - 
+INSERT INTO employees (name, email, salary, hire_date, is_active) VALUES
+('Alice Smith', 'alice.smith@example.com', 55000, '2026-01-15', TRUE),
+('Bob Jones', 'bob.jones@example.com', 48000, '2026-02-20', TRUE),
+('Charlie Brown', 'charlie.brown@example.com', 62000, '2026-03-10', TRUE),
+('Diana Prince', 'diana.prince@example.com', 75000, '2026-04-05', TRUE),
+('Evan Wright', 'evan.wright@example.com', 30000, '2026-05-12', FALSE);
+
+Q35 - ALTER TABLE employees ADD COLUMN department VARCHAR(100);
+
+UPDATE employees SET salary=salary*1.10 WHERE department='IT';
+
+
+Q36 - DELETE FROM employees where is_active=FALSE;
+
+Q37 - SELECT * FROM employees WHERE salary>50,000 AND is_active=TRUE;
+
+Q38 - 
