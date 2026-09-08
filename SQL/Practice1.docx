@@ -93,7 +93,7 @@ Q12- CREATE TABLE orders(
 
 Q13- 
 INSERT INTO student(id,name,age,course,email)
-VALUES(1,'sanjit',age,'Python','email');
+VALUES(1,'sanjit',34,'Python','email');
 
 Q14-
 insert INTO student(id,name,age,course,email)
@@ -122,7 +122,7 @@ Q23 - yes it will deletes all the rows but not the schema but frop deletes all t
 
 Q24 - SELECT * FROM students;
 
-Q25 - SELECT name email FROM student;
+Q25 - SELECT name, email FROM student;
 
 Q26 - SELECT * from student where id=3;
 
@@ -134,7 +134,7 @@ Q29 - SELECT * FROM student where course='Python';
 
 Q30 - SELECT * FROM student where age>=20 AND age<=22;
 
-Q31 - SELECT * FROM stuent where name ='S%';
+Q31 - SELECT * FROM student where name LIKE 'S%';
 
 Q32 - SELECT * FROM Student where email='sanjit@gmail.com';
 
@@ -142,9 +142,9 @@ Q33 - CREATE TABLE employees(
     id INT GENERATED ALWAYS AS IDENTITY primary key,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE,
-    salary INT CHECK(salary>20,000),
+    salary INT CHECK(salary>20000),
     hire_date DATE DEFAULT CURRENT_DATE,
-    is_active DEFAULT TRUE
+    is_active BOOLEAN DEFAULT TRUE
 );
 
 Q34 - 
@@ -157,11 +157,71 @@ INSERT INTO employees (name, email, salary, hire_date, is_active) VALUES
 
 Q35 - ALTER TABLE employees ADD COLUMN department VARCHAR(100);
 
-UPDATE employees SET salary=salary*1.10 WHERE department='IT';
+UPDATE employees SET salary=salary*1.10 WHERE name = 'Alice Smith;
 
 
 Q36 - DELETE FROM employees where is_active=FALSE;
 
-Q37 - SELECT * FROM employees WHERE salary>50,000 AND is_active=TRUE;
+Q37 - SELECT * FROM employees WHERE salary>50000 AND is_active=TRUE;
+
+
 
 Q38 - 
+
+Without looking at previous questions, create a table called:
+
+products
+
+with:
+
+id
+name
+category
+price
+stock
+created_at
+
+Requirements:
+
+id automatically generated primary key
+name cannot be NULL
+price must be greater than 0
+stock cannot be negative
+created_at gets the current timestamp automatically
+
+Then:
+
+Insert 5 products.
+Increase the price of one product.
+Increase the stock of another product.
+Delete one product.
+Find all products costing more than ₹1,000.
+Find all products whose stock is 0.
+
+
+CREATE TABLE products(
+    id INT GENERATED ALWAYS AS IDENTITY primary key,
+    name VARCHAR(100) NOT NULL,
+    price INT CHECK(price>0),
+    stock INT CHECK(stock>=0) NOT NULL,
+    created_at TIMESTAMPTZ DEFAULT now()
+);
+
+
+1. INSERT INTO products (name, price, stock)
+VALUES
+('Laptop', 55000, 10),
+('Smartphone', 25000, 25),
+('Headphones', 2000, 50),
+('Keyboard', 1200, 30),
+('Mouse', 800, 40);
+
+2. UPDATE products SET price=price+2000 where name='Laptop';
+
+3. UPDATE products SET stock = stock+1000 WHERE name='Mouse';
+
+4. DELETE FROM products where name='Keyboard';
+
+5. SELECT * from products where price>1000;
+
+6. SELECT * from products where stock=0;
