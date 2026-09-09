@@ -1,0 +1,114 @@
+PHASE 2- WHERE-> AND / OR / NOT-> LIKE / ILIKE-> IN / BETWEEN-> ORDER BY-> LIMIT / OFFSET-> Aggregate Functions> GROUP BY-> HAVING
+
+Assume the table contains students such as:
+
+id	name	age	course	city	marks
+1	Sanjit	20	Python	Delhi	85
+2	Rahul	21	SQL	    Jaipur	72
+3	Priya	19	Python	Delhi	91
+4	Amit	22	Java	Mumbai	68
+5	Neha	20	SQL	    Delhi	88
+6	Arjun	23	Python	Mumbai	76
+7	Simran	21	Java	Delhi	95
+8	Rohan	19	SQL	    Jaipur	64
+
+
+Q1- SELECT * from student where age>20;
+
+Q2- SELECT * from student where marks=85;
+
+Q3- SELECT * from student where course='Python';
+
+Q4- SELECT * from student where marks<70;
+
+Q5- SELECT * from student where city='Delhi';
+
+
+Q6- SELECT * from student where age>20 AND marks>70;
+
+Q7- SELECT * from student where course ='Python' OR course='SQL';
+
+Q8- SELECT * from student where city='Delhi' AND course='Python';
+
+Q9- SELECT * from student where city!='Delhi';
+
+Q10- SELECT * from student where (age=20 OR age=21) AND marks>75;
+
+Q11- SELECT * from student where name LIKE 'S%';
+
+Q12- SELECT * from student where name LIKE '%n';
+
+Q13- SELECT * from student Where name LIKE '%a%';
+
+Q14- SELECT * from student where name LIKE '_____';
+
+Q15- SELECT * from student where email LIKE '%gmail%';
+
+
+Q16- Like is case sensitive and on the other hand ILIKe is not case sensitive so we mainly use ILIKE in PostgresSQL
+
+Q17- SELECT * from student where name ILIKE 's%';
+
+Q18- SELECT * from student where course IN('Python','SQL','Java');
+
+Q19- SELECT * from student where city IN('Delhi','Mumbai');
+
+Q20- SELECT * from student where city NOT IN('Delhi','jaipur','Mumbai');
+
+
+Q21- SELECT * from student where age BETWEEN 19 AND 21 ;
+
+Q22- SELECT * from student where marks BETWEEN 70 AND 90;
+
+Q23- SELECT * from student where marks>=70 AND marks<=90;
+
+
+Q24- SELECT * from student  ORDER BY marks ASC;
+
+Q25- SELECT * from student ORDER BY marks DESC;
+
+Q26- SELECT * from student ORDER BY age ASC , marks DESC;
+
+Q27- SELECT name, marks from student ORDER BY marks DESC;
+
+
+Q28- SELECT * from student ORDER BY marks DESC LIMIT 3;
+
+Q29- SELECT * from student ORDER BY marks DESC LIMIT 1;
+
+Q30- SELECT * from student ORDER BY marks DESC LIMIT 1 OFFSET 1;
+
+Q31- SELECT * from student ORDER BY marks DESC LIMIT 2 OFFSET 2;
+
+
+Q32- SELECT COUNT(*) AS total_students from student;
+
+Q33- SELECT AVG(marks) AS average_marks from student;
+
+Q34- SELECT MAX(marks) AS highest_marks from student;
+
+Q35- SELECT MIN(marks) AS lowest_marks from student;
+
+Q36- SELECT SUM(marks) AS total_marks from student;
+
+Q37- SELECT count(*) AS students_above_80 from student where marks>80;
+
+
+Q38- SELECT course , count(*) AS total_students from student GROUP BY course;
+
+Q39- SELECT course, AVG(marks) AS average_marks from student GROUP BY course;
+
+Q40- SELECT course, MAX(marks) AS highest_marks from student GROUP BY course;
+
+Q41- SELECT course , MIN(marks) AS lowest_marks from student GROUP BY course;
+
+Q42- SELECT city, COUNT(*) AS total_students_incity from student GROUP BY city;
+
+Q43- SELECT city, AVG(age) AS average_age from student GROUP BY city;
+
+
+Q44- SELECT course, COUNT(*) AS total_student from student GROUP BY course ORDER BY total_students DESC;
+
+Q45- SELECT course, AVG(marks) AS average_marks from student GROUP by course ORDER BY average_marks DESC;
+
+Q46- SELECT city, count(*) as total_students_bycity from student GROUP BY city ORDER BY city ASC;
