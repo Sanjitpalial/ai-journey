@@ -112,3 +112,13 @@ Q44- SELECT course, COUNT(*) AS total_student from student GROUP BY course ORDER
 Q45- SELECT course, AVG(marks) AS average_marks from student GROUP by course ORDER BY average_marks DESC;
 
 Q46- SELECT city, count(*) as total_students_bycity from student GROUP BY city ORDER BY city ASC;
+
+
+Q47- SELECT course , count(*) from student GROUP BY course HAVING count(*)>2;
+
+Q48- SELECT course, AVG(marks) as avg_marks from student GROUP by course HAVING AVG(marks)>80;
+
+Q49- SELECT city, count(*) from student GROUP BY city HAVING count(*)>=3;
+
+Q50- SELECT course, MAX(marks) from student GROUP BY course HAVING MAX(marks)>90;
+
