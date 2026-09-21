@@ -122,3 +122,24 @@ Q49- SELECT city, count(*) from student GROUP BY city HAVING count(*)>=3;
 
 Q50- SELECT course, MAX(marks) from student GROUP BY course HAVING MAX(marks)>90;
 
+
+Q51- SELECT * from student where course = 'Pyhton' ORDER BY DESC LIMIT 2;
+
+Q52- SELECT city, AVG(marks) from student where city='Delhi' group by city;
+
+Q53- SELECT city, count(*) from student where marks>80 AND city='Delhi' GROUP BY city;
+
+Q54- SELECT course , MAX(marks) from student where course='SQL' GROUP BY course ;
+     SELECT * from student where course='SQL' ORDER BY marks DESC LIMIT 1;
+
+Q55- SELECT  AVG(marks)  FROM student where age BETWEEN 19 AND 21 
+
+Q56- SELECT * from student WHERE name ILIKE 's%' AND marks>80;
+
+Q57- SELECT * from student where city='Delhi' ORDER BY marks DESC LIMIT3;
+
+Q58- SELECT course, AVG(marks) AS average_marks from student GROUP BY course HAVING AVG(marks)>75 ORDER BY average_marks DESC ;
+
+Q59- SELECT city, COUNT(*) AS total_Students from student GROUP BY city ORDER BY total_students DESC LIMIT 1;
+
+Q60- SELECT course, AVG(marks) as average_marks from student GROUP BY course ORDER BY average_marks DESC limit 1 offset 1;
